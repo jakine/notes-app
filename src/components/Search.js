@@ -28,10 +28,13 @@ const Search = (props) => {
   };
   console.log(date)
 
-
+  // const searchBydate=()=>{
+  //   debugger
+  //   props.searchBydateHandler({date});
+  // }
 
   const searchBydate = () => {
-    props.searchBydateHandler({ searchText });
+    props.searchBydateHandler({ searchText, oppositeSearched });
   };
 
   return (
