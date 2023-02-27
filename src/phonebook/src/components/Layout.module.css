@@ -1,0 +1,12 @@
+.h1on{
+  background-color: rgba(1, 1, 20, 0.808);
+  color: white;
+  padding: 5px;
+  font-size: 22px;
+
+}
+.container{
+  /* width: 70%; */
+  padding-left: 20%;
+  padding-right: 15% ;
+}

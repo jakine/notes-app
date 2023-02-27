@@ -1,0 +1,7 @@
+.container{
+  display: flex;
+} 
+.forma{
+  display: flex;
+  flex-direction: column;
+}

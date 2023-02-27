@@ -1,0 +1,21 @@
+.notesDisplayScreen{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+.allNotesDisplay{
+  width: 35%;
+  background-color: aquamarine;
+}
+.notesWithCategories{
+  width: 64%;
+  background-color: aqua;
+}
+.addnoteButton{
+  background-color: #fef68a;
+  width: 100px;
+  height: 40px;
+  padding: 4px;
+  border-radius:15px ;
+  margin-left: 150px;
+}

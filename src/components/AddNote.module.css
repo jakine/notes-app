@@ -1,0 +1,78 @@
+
+.noteNew {
+	background-color: #fef68a;
+	width: 200px;
+	height: 220px;
+  margin: 20px;
+	border-radius: 10px;
+	padding: 1rem;
+	min-height: 170px;
+	/* display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	white-space: pre-wrap; */
+}
+
+.textArea {
+	border: none;
+	resize: none;
+	background-color: #fef68a;
+  width: max-content;
+  height: 140px;
+}
+
+.textArea:focus {
+	outline: none;
+}
+
+.tagging{
+  height: 30px;
+	border: none;
+	resize: none;
+	background-color: #f4ed93f5;
+  width: max-content;
+
+}
+.tagging:focus {
+	outline: none;
+}
+
+.textArea:focus {
+	outline: none;
+}
+.noteFooter {
+	display: flex;
+	justify-content: space-between;
+}
+
+.save {
+	background-color: rgb(119, 245, 119);
+	border: none;
+	border-radius: 15px;
+	width: 60px;
+  height: 40px;
+  padding: 4px;
+  border-radius:15px ;
+	/* padding: 5px 10px 5px 10px; */
+}
+
+.save:hover {
+	/* background-color: #b3ae6e; */
+	cursor: pointer;
+	
+}
+
+.cancel{
+	background-color: rgb(119, 245, 119);
+	border: none;
+	border-radius: 15px;
+	width: 60px;
+  height: 40px;
+  padding: 4px;
+  border-radius:15px ;
+}
+
+.cancel:hover {
+		background-color: #b3ae6e;
+		cursor: pointer;		
+}
