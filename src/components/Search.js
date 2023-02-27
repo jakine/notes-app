@@ -34,7 +34,7 @@ const Search = (props) => {
   // }
 
   const searchBydate = () => {
-    props.searchBydateHandler({ searchText, oppositeSearched });
+    props.searchBydateHandler({ date });
   };
 
   return (
