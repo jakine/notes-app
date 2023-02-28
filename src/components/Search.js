@@ -76,8 +76,8 @@ const Search = (props) => {
           {searchedByTag ? "cancel tags " : "search by tags"}
         </button>
       </div>
-      {/* the search Date */}
 
+      {/* the search Date */}
       <div>
         <input
           className={styles.searchInput}
@@ -85,7 +85,7 @@ const Search = (props) => {
           name="select date"
           onChange={(e) => onChangeDate(e.target.value)}
         />
-        {searchByDate ? (
+        {searchByDate  ? (
           <button className={styles.searchButton} onClick={searchBydate}>
             cancel search
           </button>
@@ -95,6 +95,8 @@ const Search = (props) => {
           </button>
         )}
       </div>
+
+      
     </div>
   );
 };

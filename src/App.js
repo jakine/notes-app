@@ -14,10 +14,13 @@ const App = () => {
 
   // this is to apply the background color
   const [modeToggler, setModeToggler] = useState(false);
-  const classnameBackground = modeToggler? styles.appDarkBackgroundBackground:styles.appLightBackgroundBackground;
+  const classnameBackground = modeToggler
+    ? styles.appDarkBackgroundBackground
+    : styles.appLightBackgroundBackground;
 
   const setBackGround = ({ modeState }) => {
     setModeToggler(modeState);
+    classnamewback;
   };
 
   // to render add note or not
@@ -105,13 +108,9 @@ const App = () => {
         searchTagHandlerr={filterByTag}
       />
 
-
       <div className={styles.notesDisplayScreen}>
         <div className={styles.allNotesDisplay}>
-          <NoteList
-            // noteList={noteListData}
-            noteList={searchingByText ? searchedState : noteListData}
-          />
+          <NoteList noteList={searchingByText ? searchedState : noteListData} />
         </div>
         {searchingByDate && (
           <div className={styles.notesWithCategories}>
@@ -122,12 +121,6 @@ const App = () => {
           <div className={styles.notesWithCategories}>
             <NoteListBy noteList={searchedStateByTag} />
           </div>
-        )}
-        {console.log(
-          searchingByDate,
-          "search date ",
-          searchByTag,
-          "search tag "
         )}
 
         {!(searchingByDate || searchByTag) && (
