@@ -2,43 +2,56 @@ import { useState } from "react";
 import styles from "./Search.module.css";
 import { useSelector } from "react-redux";
 const Search = (props) => {
-  const noteListDataTag = useSelector((state) => state.notes.allTags);
-  
-  console.log("TAGS", noteListDataTag);
-
-  // searching logic
+  // search with text logic
   const [searchText, setSearchText] = useState("");
-  const [searched, setSearched] = useState(false);
+  const [searchedByText, setSearchedByText] = useState(false);
 
   const searchHandler = () => {
-    const oppositeSearched = !searched;
-    setSearched(oppositeSearched);
+    const oppositeSearched = !searchedByText;
+    setSearchedByText(oppositeSearched);
     props.searchHandlerr({ searchText, oppositeSearched });
   };
 
   // date logic
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState("");
+  const [searchByDate, setSearchByDate] = useState(false);
 
   const onChangeDate = (e) => {
     const selectedDate = new Date(e);
     const formattedDate = `${selectedDate.getDate()}/${
       selectedDate.getMonth() + 1
     }/${selectedDate.getFullYear()}`;
-    setDate(formattedDate)
+    setDate(formattedDate);
+    const oppositeSearched = !searchByDate;
+    setSearchByDate(oppositeSearched);
+    props.searchBydateHandler({ formattedDate,oppositeSearched });
   };
-  console.log(date)
-
-  // const searchBydate=()=>{
-  //   debugger
-  //   props.searchBydateHandler({date});
-  // }
 
   const searchBydate = () => {
-    props.searchBydateHandler({ date });
+    const selectedDate = new Date();
+    const formattedDate = `${selectedDate.getDate()}/${
+      selectedDate.getMonth() + 1
+    }/${selectedDate.getFullYear()}`;
+    setDate(formattedDate);
+    const oppositeSearched = !searchByDate;
+    setSearchByDate(oppositeSearched);
+    props.searchBydateHandler({ formattedDate, oppositeSearched });
+  };
+
+  // tag logic here
+
+  const [searchTag, setSearchTag] = useState("");
+  const [searchedByTag, setSearchedByTag] = useState(false);
+
+  const searchTagHandler = () => {
+    const oppositeSearched = !searchedByTag;
+    setSearchedByTag(oppositeSearched);
+    props.searchTagHandlerr({ searchTag, oppositeSearched });
   };
 
   return (
     <div className={styles.searchBar}>
+      {/* the search TEXT */}
       <div>
         <input
           className={styles.searchInput}
@@ -47,21 +60,23 @@ const Search = (props) => {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button className={styles.searchButton} onClick={searchHandler}>
-          {searched ? "cancel search " : "search"}
+          {searchedByText ? "cancel search " : "search"}
         </button>
       </div>
+      {/* the search TAG */}
 
       <div>
-      <input
+        <input
           className={styles.searchInput}
           type="text"
           placeholder="write tag"
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => setSearchTag(e.target.value)}
         />
-        <button className={styles.searchButton} onClick={searchHandler}>
-          search by tag
+        <button className={styles.searchButton} onClick={searchTagHandler}>
+          {searchedByTag ? "cancel tags " : "search by tags"}
         </button>
       </div>
+      {/* the search Date */}
 
       <div>
         <input
@@ -70,9 +85,15 @@ const Search = (props) => {
           name="select date"
           onChange={(e) => onChangeDate(e.target.value)}
         />
-        <button className={styles.searchButton} onClick={searchBydate}>
-          search by date 
-        </button>
+        {searchByDate ? (
+          <button className={styles.searchButton} onClick={searchBydate}>
+            cancel search
+          </button>
+        ) : (
+          <button className={styles.searchButton} onClick={searchBydate}>
+            search by date
+          </button>
+        )}
       </div>
     </div>
   );

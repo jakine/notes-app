@@ -20,6 +20,7 @@ const AddNote = (props) => {
   const notesState = useSelector((state) => state.notes);
 
   const [noteText, setNoteText] = useState("");
+  
   const [noteTag, setNoteTag] = useState("");
 
   const clearfields = () => {

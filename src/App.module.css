@@ -5,10 +5,12 @@
 }
 .allNotesDisplay{
   width: 35%;
+  height: max-content;
   background-color: aquamarine;
 }
 .notesWithCategories{
   width: 64%;
+  height: max-content;
   background-color: aqua;
 }
 .addnoteButton{
