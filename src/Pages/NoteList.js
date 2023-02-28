@@ -2,12 +2,8 @@ import React from 'react'
 import Note from '../components/Note'
 import styles from './NoteList.module.css'
 
-
-import { useDispatch, useSelector } from "react-redux";
-import {noteActions, noteSlice } from '../store/noteSlice'
-
-
-
+import { useDispatch } from "react-redux";
+import {noteActions } from '../store/noteSlice'
 
 const NoteList = (props) => {
 
@@ -17,10 +13,9 @@ const NoteList = (props) => {
 		dispatch(noteActions.deleteNote(note))
 		{console.log(props.noteList)}
 	}
-
-	// {debugger}
-	return (
 	
+	// debugger
+	return (
     <div className={styles.noteList}>
 			{props.noteList.length>0 && props.noteList.map((note) => (
 				<Note

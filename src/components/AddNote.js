@@ -5,10 +5,9 @@ import styles from "./AddNote.module.css";
 
 import { GiCancel } from "react-icons/gi";
 
-import { useDispatch, useSelector } from "react-redux";
-import { noteActions, noteSlice } from "../store/noteSlice";
+import { useDispatch } from "react-redux";
+import { noteActions} from "../store/noteSlice";
 const AddNote = (props) => {
-  // let newdate=new Date();
   const dispatch = useDispatch();
 
   const current = new Date();
@@ -16,8 +15,6 @@ const AddNote = (props) => {
     current.getMonth() + 1
   }/${current.getFullYear()}`;
 
-  // console.log(date);
-  const notesState = useSelector((state) => state.notes);
 
   const [noteText, setNoteText] = useState("");
   
@@ -35,7 +32,6 @@ const AddNote = (props) => {
       notetag: noteTag,
       date: date,
     };
-    // console.log(currentNote);
     clearfields()
     dispatch(noteActions.addNotes(currentNote));
   };

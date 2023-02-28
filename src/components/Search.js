@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Search.module.css";
 import { useSelector } from "react-redux";
 const Search = (props) => {
+
   // search with text logic
   const [searchText, setSearchText] = useState("");
   const [searchedByText, setSearchedByText] = useState(false);
@@ -26,7 +27,6 @@ const Search = (props) => {
     setSearchByDate(oppositeSearched);
     props.searchBydateHandler({ formattedDate,oppositeSearched });
   };
-
   const searchBydate = () => {
     const selectedDate = new Date();
     const formattedDate = `${selectedDate.getDate()}/${

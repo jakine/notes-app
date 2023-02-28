@@ -75,7 +75,6 @@ const App = () => {
     console.log("useeffect filtering by tag ");
     setTag(searchTag);
     setSearchByTag(oppositeSearched);
-    // console.log(e, "APPPPPCLASS");
   };
   useEffect(() => {
     console.log("workign filter tag");
@@ -136,7 +135,7 @@ const App = () => {
           {!(searchingByDate || searchByTag) && noteListData.length > 0 && (
               <NoteListBy noteList={noteListData} />
           )}
-          
+
         </div>
 
       </div>

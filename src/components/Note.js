@@ -2,16 +2,15 @@ import styles from "./Note.module.css";
 import { MdDeleteForever } from "react-icons/md";
 
 const Note = (props) => {
-  // console.log(props);
   return (
     <div className={styles.note}>
       <div className={styles.noteContent}>
-        <p>{props.text}</p>
-        <p>{props.tag}</p>
+        <p className={styles.noteText}>{props.text}</p>
+        <p className={styles.noteTag}> {props.tag}</p>
       </div>
-      <div className="note-footer">
-        <small>{props.date}</small>
-        <button onClick={()=>props.handleDeleteNote()}>
+      <div className={styles.noteFooter}>
+        <p> <small>{props.date} </small> </p>
+        <button className={styles.deleteIcon} onClick={()=>props.handleDeleteNote()}>
           <MdDeleteForever className="delete-icon" size="1.3em" />
         </button>
       </div>

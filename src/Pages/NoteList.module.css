@@ -10,9 +10,5 @@
 	width: 200px;
 	max-height: max-content;
   margin: 20px;
-}
-.noteContent{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	margin-bottom: 15px;
 }

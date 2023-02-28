@@ -1,4 +1,4 @@
-.noteList{
+.noteListBy{
 	border-radius: 10px;
 	padding: 1rem;
 	min-height: 170px;
@@ -11,7 +11,7 @@
 	height: max-content;
   margin: 20px;
 }
-.noteContent{
+.noteContentBy{
   display: flex;
   flex-direction: column;
   justify-content: space-between;

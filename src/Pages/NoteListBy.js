@@ -14,10 +14,11 @@ const NoteListBy = (props) => {
 	}
 
 	
-
+	
   return (
-      <div className={styles.noteList}>
+      <div className={styles.noteListBy}>
 			{props.noteList.length>0 && props.noteList.map((note) => (
+				<div className={styles.noteContentBy}>
 				<Note
 					key={note.id}
 					text={note.notetext}
@@ -25,6 +26,7 @@ const NoteListBy = (props) => {
 					date={note.date}
 					handleDeleteNote={()=>deleteNote(note)}
 				/>
+				</div>
 			))}
 		
 		</div>

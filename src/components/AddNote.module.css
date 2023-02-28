@@ -7,10 +7,6 @@
 	border-radius: 10px;
 	padding: 1rem;
 	min-height: 170px;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	white-space: pre-wrap; */
 }
 
 .textArea {
@@ -53,13 +49,10 @@
   height: 40px;
   padding: 4px;
   border-radius:15px ;
-	/* padding: 5px 10px 5px 10px; */
 }
 
 .save:hover {
-	/* background-color: #b3ae6e; */
 	cursor: pointer;
-	
 }
 
 .cancel{

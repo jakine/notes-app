@@ -8,9 +8,33 @@
 	flex-direction: column;
 	justify-content: space-between;
 	white-space: pre-wrap;
+	margin-bottom: 15px;
 }
+
 .noteContent{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+	height: 80%;
+}
+.noteText{
+	height: 59px;
+
+}
+.noteTag{
+	height:20% ;
+}
+
+.noteFooter {
+	display: flex;
+	justify-content: space-between;
+	height: 19%;
+}
+.deleteIcon{
+	border: none;
+	border-radius: 15px;
+	width: 60px;
+  height: 40px;
+  padding: 4px;
+  border-radius:15px ;
 }
