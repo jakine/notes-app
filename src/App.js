@@ -12,6 +12,14 @@ const App = () => {
   const state = useSelector((state) => state.notes);
   const noteListData = useSelector((state) => state.notes.allNotes);
 
+  // this is to apply the background color
+  const [modeToggler, setModeToggler] = useState(false);
+  const classnameBackground = modeToggler? styles.appDarkBackgroundBackground:styles.appLightBackgroundBackground;
+
+  const setBackGround = ({ modeState }) => {
+    setModeToggler(modeState);
+  };
+
   // to render add note or not
   const [addNoteForm, setAddNoteForm] = useState(false);
 
@@ -21,7 +29,7 @@ const App = () => {
 
   const [tag, setTag] = useState("");
   const [searchByTag, setSearchByTag] = useState(false);
-  
+
   const [date, setDate] = useState("");
   const [searchingByDate, setSearchingByDate] = useState(false);
 
@@ -56,18 +64,18 @@ const App = () => {
     );
     // debugger
     setSearchByDate(searchedNotes);
-  }, [date,searchingByDate, state]);
+  }, [date, searchingByDate, state]);
 
   // FILTERING BY TAG
 
   const filterByTag = ({ searchTag, oppositeSearched }) => {
-    console.log('useeffect filtering by tag ')
+    console.log("useeffect filtering by tag ");
     setTag(searchTag);
     setSearchByTag(oppositeSearched);
     // console.log(e, "APPPPPCLASS");
   };
   useEffect(() => {
-    console.log('workign filter tag')
+    console.log("workign filter tag");
     const searchedNotes = noteListData.filter((note) =>
       note.notetag.includes(tag)
     );
@@ -76,23 +84,27 @@ const App = () => {
 
   console.log(state);
   return (
-    <div>
-      <Navbar />
-      {!addNoteForm && (
-        <button
-          className={styles.addnoteButton}
-          onClick={() => setAddNoteForm(true)}
-        >
-          addNote
-        </button>
-      )}
+    <div className={classnameBackground}>
+      <Navbar modeToggler={setBackGround} />
+
+      <div className={styles.addnoteDiv}>
+        {!addNoteForm && (
+          <button
+            className={styles.addnoteButton}
+            onClick={() => setAddNoteForm(true)}
+          >
+            addNote
+          </button>
+        )}
+        {addNoteForm && <AddNote onCancel={() => setAddNoteForm(false)} />}
+      </div>
+
       <Search
         searchHandlerr={searchHandler}
         searchBydateHandler={filterByDate}
         searchTagHandlerr={filterByTag}
       />
 
-      {addNoteForm && <AddNote onCancel={() => setAddNoteForm(false)} />}
 
       <div className={styles.notesDisplayScreen}>
         <div className={styles.allNotesDisplay}>
@@ -101,30 +113,28 @@ const App = () => {
             noteList={searchingByText ? searchedState : noteListData}
           />
         </div>
-      
-        {
-          searchingByDate && (
+        {searchingByDate && (
           <div className={styles.notesWithCategories}>
             <NoteListBy noteList={searchByDate} />
           </div>
-        ) }
-        {searchByTag &&(
+        )}
+        {searchByTag && (
           <div className={styles.notesWithCategories}>
             <NoteListBy noteList={searchedStateByTag} />
           </div>
-        )
-        }
-        {
-          console.log(searchingByDate, 'search date ', searchByTag , 'search tag ')
-        }
+        )}
+        {console.log(
+          searchingByDate,
+          "search date ",
+          searchByTag,
+          "search tag "
+        )}
 
-        
-        {!(searchingByDate || searchByTag )&& (
+        {!(searchingByDate || searchByTag) && (
           <div className={styles.notesWithCategories}>
             <NoteListBy noteList={noteListData} />
           </div>
-        ) }
-        
+        )}
       </div>
     </div>
   );

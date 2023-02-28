@@ -1,3 +1,36 @@
+
+.appLightBackgroundBackground{
+  background-color: rgb(245, 236, 225);
+  padding: 5%;
+  padding-top: 3%;
+  min-height: max-content;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100vh;
+}
+.appDarkBackgroundBackground{
+  background-color: rgb(54, 54, 54);
+  padding: 5%;
+  padding-top: 3%;
+  min-height: max-content;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100vh;
+}
+.addnoteDiv{
+  align-items: left;
+  margin: 10px;
+
+}
+
+.addnoteButton{
+  background-color: #fef68a;
+  width: 150px;
+  height: 60px;
+  padding: 4px;
+  border-radius:30px ;
+}
+
 .notesDisplayScreen{
  display: flex;
  flex-direction: row;
@@ -6,18 +39,10 @@
 .allNotesDisplay{
   width: 35%;
   height: max-content;
-  background-color: aquamarine;
+ 
 }
 .notesWithCategories{
   width: 64%;
   height: max-content;
-  background-color: aqua;
 }
-.addnoteButton{
-  background-color: #fef68a;
-  width: 100px;
-  height: 40px;
-  padding: 4px;
-  border-radius:15px ;
-  margin-left: 150px;
-}
+
