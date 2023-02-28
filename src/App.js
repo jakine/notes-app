@@ -110,24 +110,35 @@ const App = () => {
 
       <div className={styles.notesDisplayScreen}>
         <div className={styles.allNotesDisplay}>
-          <NoteList noteList={searchingByText ? searchedState : noteListData} />
-        </div>
-        {searchingByDate && (
-          <div className={styles.notesWithCategories}>
-            <NoteListBy noteList={searchByDate} />
-          </div>
-        )}
-        {searchByTag && (
-          <div className={styles.notesWithCategories}>
-            <NoteListBy noteList={searchedStateByTag} />
-          </div>
-        )}
 
-        {!(searchingByDate || searchByTag) && (
-          <div className={styles.notesWithCategories}>
-            <NoteListBy noteList={noteListData} />
-          </div>
-        )}
+          {( !(searchingByText) &&  noteListData.length > 0 )   && (
+              <NoteList
+                noteList={noteListData}
+              />
+          )}
+
+          {searchingByText && (searchedState.length > 0 ) && (
+              <NoteList
+                noteList={searchedState}
+              />
+          )}
+        </div>
+
+        <div className={styles.notesWithCategories}>
+          {searchingByDate && searchByDate.length > 0 && (
+              <NoteListBy noteList={searchByDate} />
+          )}
+
+          {searchByTag && searchedStateByTag.length > 0 && (
+              <NoteListBy noteList={searchedStateByTag} />
+          )}
+
+          {!(searchingByDate || searchByTag) && noteListData.length > 0 && (
+              <NoteListBy noteList={noteListData} />
+          )}
+          
+        </div>
+
       </div>
     </div>
   );
