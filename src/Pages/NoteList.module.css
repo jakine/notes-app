@@ -6,9 +6,9 @@
 	flex-direction: column;
 	justify-content: space-between;
 	white-space: pre-wrap;
-  background-color: #fef68a;
 	width: 200px;
 	max-height: max-content;
   margin: 20px;
 	margin-bottom: 15px;
+	gap: 1.5rem;
 }

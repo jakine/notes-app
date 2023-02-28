@@ -109,7 +109,6 @@ const App = () => {
 
       <div className={styles.notesDisplayScreen}>
         <div className={styles.allNotesDisplay}>
-
           {( !(searchingByText) &&  noteListData.length > 0 )   && (
               <NoteList
                 noteList={noteListData}
@@ -129,7 +128,7 @@ const App = () => {
           )}
 
           {searchByTag && searchedStateByTag.length > 0 && (
-              <NoteListBy noteList={searchedStateByTag} />
+              <NoteListBy tag={tag} noteList={searchedStateByTag} />
           )}
 
           {!(searchingByDate || searchByTag) && noteListData.length > 0 && (
